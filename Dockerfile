@@ -2,28 +2,3 @@ FROM nginx:alpine
 
 COPY app/index.html /usr/share/nginx/html/index.html
 
-vi deployment.yaml
-
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: jenkins-nginx
-spec:
-  replicas: 2
-
-  selector:
-    matchLabels:
-      app: jenkins-nginx
-
-  template:
-    metadata:
-      labels:
-        app: jenkins-nginx
-
-    spec:
-      containers:
-        - name: nginx
-          image: IMAGE_URI
-          ports:
-            - containerPort: 80
-
