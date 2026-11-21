@@ -3,10 +3,10 @@ pipeline {
     agent any
 
     environment {
-        AWS_REGION = 'eu-north-1'
-        ECR_REPO = 'ekr-jenkins'
-        EKS_CLUSTER = 'EKS-LIVETECH-DEVOPS'
-        AWS_ACCOUNT_ID = '319556313437'
+        AWS_REGION = 'ap-south-1'
+        ECR_REPO = 'jenkins-eks-demo'
+        EKS_CLUSTER = 'EKS-Cluster'
+        AWS_ACCOUNT_ID = '476128264121'
 
         ECR_REGISTRY = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com"
         IMAGE_TAG = "${BUILD_NUMBER}"
